@@ -1,4 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:podk/components/bottom_navigation.dart';
+
+// int? initScreen;
+// Future<void> main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   SharedPreferences prefs = await SharedPreferences.getInstance();
+//   initScreen = prefs.getInt("initScreen");
+//   await prefs.setInt("initScreen", 1);
+//   runApp(const MyApp());
+// }
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -23,8 +35,13 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.transparent,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: 'onboard',
+        routes: {
+          'onboard': (context) => const BottomNavigation(),
+          // 'onboard': (context) => const Onboarding(),
+        },
     );
   }
 }
