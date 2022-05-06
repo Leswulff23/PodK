@@ -62,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height:25),
               CustomButton(
                 onPressed: (){
-                  Navigator.pushNamed(context, '/login');
+                  Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
                 }, 
                 btnName: 'Login'
               ),
