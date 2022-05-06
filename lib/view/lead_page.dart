@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:podk/components/colors.dart' as color;
 import 'package:podk/components/custom_botton.dart';
 import 'package:podk/components/text.dart' as size;
+import 'package:podk/view/login_page.dart';
 
 class LeadScreen extends StatefulWidget {
   const LeadScreen({ Key? key }) : super(key: key);
@@ -40,12 +41,16 @@ class _LeadScreenState extends State<LeadScreen> {
             ),
             const SizedBox(height:10),
             CustomButton(
-              onPressed: (){}, 
+              onPressed: (){
+                Navigator.pushNamed(context, '/login');
+              }, 
               btnName: 'Login'
             ),
             const SizedBox(height:20),
             TextButton(
-              onPressed: (){}, 
+              onPressed: (){
+                Navigator.pushNamed(context, '/register');
+              }, 
               child: Text('Sign Up',
                 style: TextStyle(color: color.AppColor.mainColor, fontSize:size.AppSize.buttonText, fontWeight: FontWeight.w600),
                 textAlign: TextAlign.center,

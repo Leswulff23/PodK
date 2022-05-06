@@ -15,24 +15,27 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left:25, right: 25, top:25),
-      child: Container(
-        alignment: Alignment.center,
-        height: 50,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          border: Border.all(
+      padding: const EdgeInsets.only(left:25, right: 25, top:25),
+      child: GestureDetector(
+        onTap: onPressed,
+        child: Container(
+          alignment: Alignment.center,
+          height: 50,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: color.AppColor.mainColor,
+            ),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(30),
+            ),
             color: color.AppColor.mainColor,
           ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(30),
-          ),
-          color: color.AppColor.mainColor,
+          child: Text(btnName,
+          style: TextStyle(color: color.AppColor.whiteColor, fontSize:size.AppSize.buttonText, fontWeight: FontWeight.w600),
+            textAlign: TextAlign.center,
+          )
         ),
-        child: Text(btnName,
-        style: TextStyle(color: color.AppColor.whiteColor, fontSize:size.AppSize.buttonText, fontWeight: FontWeight.w600),
-          textAlign: TextAlign.center,
-        )
       ),
     );
   }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:podk/view/lead_page.dart';
+import 'package:podk/view/login_page.dart';
 import 'package:podk/view/onboarding_page.dart';
+import 'package:podk/view/register_page.dart';
 import 'package:podk/view/splash_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:podk/components/bottom_navigation.dart';
@@ -51,6 +53,8 @@ class MyApp extends StatelessWidget {
           '/splash': (context) => const SplashScreen(),
           '/onboard': (context) => const Onboarding(),
           '/lead':(context) => const LeadScreen(),
+          '/login': (context) =>const LoginScreen(),
+          '/register':(context) =>const RegisterScreen(),
         },
     );
   }
