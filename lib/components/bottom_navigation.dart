@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:podk/view/home_page.dart';
+import 'package:podk/components/colors.dart' as color;
 
 
 class BottomNavigation extends StatefulWidget {
@@ -16,6 +17,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   final screens = [
     const HomeScreen(),
+
   ];
 
 
@@ -24,9 +26,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        backgroundColor: Colors.white,
-        activeColor: Colors.blue,
-        inactiveColor: Colors.black,
+        height: 55,
+        iconSize: 24.0,
+        backgroundColor: color.AppColor.tabColor,
+        activeColor: color.AppColor.mainColor,
+        inactiveColor: color.AppColor.whiteColor,
         currentIndex: currentIndex,
         border: Border.all(color: Colors.transparent),
         onTap: (int index) => setState(() {
@@ -34,16 +38,20 @@ class _BottomNavigationState extends State<BottomNavigation> {
         }),
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book),
-            label: 'Contacts',
+            icon: Icon(Icons.home_filled),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_call),
-            label: 'Add Contact',
+            icon: Icon(Icons.dashboard_customize),
+            label: 'Categories',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
+            icon: Icon(Icons.playlist_add_check_circle_sharp),
+            label: 'Playlists',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_sharp),
+            label: 'Profile',
           ),
         ]
       ),
