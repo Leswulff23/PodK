@@ -33,7 +33,7 @@ class _OnboardingState extends State<Onboarding> {
 
   @override
   Widget build(BuildContext context) {
-    double space = MediaQuery.of(context).size.height * 0.35; 
+    double space = MediaQuery.of(context).size.height * 0.25; 
     return PageView.builder(
       controller: _controller,
       itemCount: data.length,
@@ -45,10 +45,33 @@ class _OnboardingState extends State<Onboarding> {
       itemBuilder: (_, i){
         return Scaffold(
           body: Container(
+            alignment: Alignment.center,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Expanded(child: Image.asset(data[i].image)),
+                Expanded(
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top:35, bottom:2, left:16, right:16),
+                        alignment: Alignment.topLeft,
+                        child: TextButton(
+                          onPressed: (){
+                            _controller.previousPage(
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeIn,
+                            );
+                          },
+                          child: Text( currentIndex == data.length - 2 ||  currentIndex == data.length - 1 ? '<Back': '', 
+                            style: TextStyle(color: color.AppColor.mainColor, fontSize:size.AppSize.tabInnerText, fontWeight: FontWeight.w300),
+                            textAlign: TextAlign.left,
+                          )
+                        ),
+                      ),
+                      Image.asset(data[i].image)
+                    ]
+                  )
+                ),
                 SizedBox(height: space)
               ],
             ),
@@ -89,15 +112,20 @@ class _OnboardingState extends State<Onboarding> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextButton(
-                      onPressed: (){}, 
-                      child: Text('Skip Tour', 
+                      onPressed: (){
+                        Navigator.pushNamedAndRemoveUntil(context, '/lead', (route) => false);
+                      }, 
+                      child: Text(currentIndex == data.length - 1 ? 'Well Done' : 'Skip Tour', 
                         style: TextStyle(color: color.AppColor.mainColor, fontSize:size.AppSize.tabInnerText, fontWeight: FontWeight.w300)
                       )
                     ),
                     FloatingActionButton(
                       onPressed: (){
+                        currentIndex == data.length - 1 ?
+                        Navigator.pushNamedAndRemoveUntil(context, '/lead', (route) => false)
+                        : 
                         _controller.nextPage(
-                          duration: const Duration(milliseconds: 200),
+                          duration: const Duration(milliseconds: 300),
                           curve: Curves.easeIn,
                         );
                       },
