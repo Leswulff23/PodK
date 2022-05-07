@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:podk/view/home_page.dart';
 import 'package:podk/view/lead_page.dart';
@@ -8,7 +9,8 @@ import 'package:podk/view/register_page.dart';
 import 'package:podk/view/splash_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:podk/components/bottom_navigation.dart';
-
+import 'package:podk/components/text.dart' as size;
+import 'package:podk/components/colors.dart' as color;
 
 // int? initScreen;
 // Future<void> main() async {
@@ -19,11 +21,13 @@ import 'package:podk/components/bottom_navigation.dart';
 //   runApp(const MyApp());
 // }
 
-void main() {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  await Firebase.initializeApp();
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -49,14 +53,14 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.transparent,
       ),
       initialRoute: '/splash',
-        routes: {
-          '/': (context) => const BottomNavigation(),
-          '/splash': (context) => const SplashScreen(),
-          '/onboard': (context) => const Onboarding(),
-          '/lead':(context) => const LeadScreen(),
-          '/login': (context) =>const LoginScreen(),
-          '/register':(context) =>const RegisterScreen(),
-        },
+      routes: {
+        '/': (context) => const BottomNavigation(),
+        '/splash': (context) => const SplashScreen(),
+        '/onboard': (context) => const Onboarding(),
+        '/lead': (context) => const LeadScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/register': (context) => const RegisterScreen(),
+      },
     );
   }
 }

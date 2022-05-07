@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:podk/view/category_page.dart';
 import 'package:podk/view/home_page.dart';
 import 'package:podk/components/colors.dart' as color;
+import 'package:podk/view/playlist_page.dart';
+import 'package:podk/view/settings_page.dart';
 
 
 class BottomNavigation extends StatefulWidget {
@@ -17,6 +20,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   final screens = [
     const HomeScreen(),
+    const CategoryScreen(),
+    const PlaylistScreen(),
+    const SettingScreen(),
 
   ];
 

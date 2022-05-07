@@ -6,11 +6,18 @@ import 'package:podk/components/text.dart' as size;
 import 'package:podk/components/colors.dart' as color;
 import 'package:podk/model/card_model.dart';
 import 'package:podk/model/tab_model.dart';
+import 'package:podk/view/audio_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
+
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({ Key? key }) : super(key: key);
+
+
+  const HomeScreen({ 
+
+    Key? key 
+    }) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -204,7 +211,15 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                           card_title: cardData.title,
                           card_image: cardData.image,
                           card_author: cardData.author,
-                          onPressed: (){}
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const MediaScreen()
+                              ),
+                            );
+                          }
                         )
                       );
                     },

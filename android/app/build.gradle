@@ -28,6 +28,8 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 android {
     compileSdkVersion flutter.compileSdkVersion
 
+    compileSdkVersion 31
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -48,7 +50,9 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
     }
+
 
     buildTypes {
         release {
@@ -59,10 +63,19 @@ android {
     }
 }
 
+android {
+    defaultConfig {
+        minSdkVersion 20
+    }
+}
+
 flutter {
     source '../..'
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.multidex:multidex:2.0.1"
 }
+
+apply plugin: 'com.google.gms.google-services'
