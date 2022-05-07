@@ -44,7 +44,11 @@ return Scaffold(
                     Navigator.pop(context); 
                   },
                   child: Text('<Back',
-                    style: TextStyle(color: color.AppColor.mainColor, fontSize:size.AppSize.tabInnerText, fontWeight: FontWeight.w300),
+                    style: TextStyle(
+                      color: color.AppColor.mainColor, 
+                      fontSize:size.AppSize.tabInnerText,
+                      fontWeight: FontWeight.w300
+                    ),
                   )
                 ),
               ),
@@ -52,13 +56,21 @@ return Scaffold(
               const SizedBox(height:5),
               Flexible(
                 child: Text('Sign Up',
-                  style: TextStyle(color: color.AppColor.whiteColor, fontSize:size.AppSize.tabText, fontWeight: FontWeight.w600)
+                  style: TextStyle(
+                    color: color.AppColor.whiteColor, 
+                    fontSize:size.AppSize.tabText, 
+                    fontWeight: FontWeight.w600
+                  )
                 ),
               ),
               const SizedBox(height:12),
               Flexible(
                 child: Text('Lorem ipsum dolor sit amet, consectetur.',
-                  style: TextStyle(color: color.AppColor.longColor, fontSize:size.AppSize.tabInnerText, fontWeight: FontWeight.w300),
+                  style: TextStyle(
+                    color: color.AppColor.longColor, 
+                    fontSize:size.AppSize.tabInnerText, 
+                    fontWeight: FontWeight.w300
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),

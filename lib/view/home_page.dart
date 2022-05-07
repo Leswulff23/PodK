@@ -75,7 +75,11 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               child: Container(
                 alignment: Alignment.topLeft,
                 child: Text('Hey Jake,',
-                  style: TextStyle(color: color.AppColor.mainColor, fontSize:size.AppSize.tabText, fontWeight: FontWeight.w600)
+                  style: TextStyle(
+                    color: color.AppColor.mainColor, 
+                    fontSize:size.AppSize.tabText, 
+                    fontWeight: FontWeight.w600
+                  )
                 ),
               ),
             ),

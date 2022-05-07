@@ -44,18 +44,30 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.pop(context);   
                   },
                   child: Text('<Back',
-                    style: TextStyle(color: color.AppColor.mainColor, fontSize:size.AppSize.tabInnerText, fontWeight: FontWeight.w300),
+                    style: TextStyle(
+                      color: color.AppColor.mainColor, 
+                      fontSize:size.AppSize.tabInnerText, 
+                      fontWeight: FontWeight.w600
+                    ),
                   )
                 ),
               ),
               Flexible(child: Image.asset('assets/background/login.png')),
               const SizedBox(height:5),
               Text('Login',
-                style: TextStyle(color: color.AppColor.whiteColor, fontSize:size.AppSize.tabText, fontWeight: FontWeight.w600)
+                style: TextStyle(
+                  color: color.AppColor.whiteColor, 
+                  fontSize:size.AppSize.tabText, 
+                  fontWeight: FontWeight.w600
+                )
               ),
               const SizedBox(height:12),
               Text('Lorem ipsum dolor sit amet, consectetur.',
-                style: TextStyle(color: color.AppColor.longColor, fontSize:size.AppSize.tabInnerText, fontWeight: FontWeight.w300),
+                style: TextStyle(
+                  color: color.AppColor.longColor, 
+                  fontSize:size.AppSize.tabInnerText, 
+                  fontWeight: FontWeight.w300
+                ),
                 textAlign: TextAlign.center,
               ),
               const Padding(

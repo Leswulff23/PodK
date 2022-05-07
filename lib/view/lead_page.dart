@@ -42,13 +42,21 @@ class _LeadScreenState extends State<LeadScreen> {
             Image.asset('assets/background/lead.png'),
             const SizedBox(height:10),
             Text('PODCAST',
-              style: TextStyle(color: color.AppColor.whiteColor, fontSize:size.AppSize.tabText, fontWeight: FontWeight.w600)
+              style: TextStyle(
+                color: color.AppColor.whiteColor, 
+                fontSize:size.AppSize.tabText, 
+                fontWeight: FontWeight.w600
+              )
             ),
             const SizedBox(height:40),
             Container(
               width: 310,
               child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                style: TextStyle(color: color.AppColor.longColor, fontSize:size.AppSize.tabInnerText, fontWeight: FontWeight.w300),
+                style: TextStyle(
+                  color: color.AppColor.longColor, 
+                  fontSize:size.AppSize.tabInnerText, 
+                  fontWeight: FontWeight.w300
+                ),
                 textAlign: TextAlign.center,
               ),
             ),

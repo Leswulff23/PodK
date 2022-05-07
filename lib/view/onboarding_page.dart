@@ -97,7 +97,8 @@ class _OnboardingState extends State<Onboarding> {
                   child:Text(data[i].title, 
                     style: TextStyle(
                       color: color.AppColor.whiteColor, 
-                      fontSize:size.AppSize.tabText 
+                      fontSize:size.AppSize.tabText,
+                      fontWeight: FontWeight.w600, 
                     ),
                     textAlign: TextAlign.center,
                   ),

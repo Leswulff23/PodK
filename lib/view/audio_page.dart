@@ -23,7 +23,7 @@ class _MediaScreenState extends State<MediaScreen> {
     advancedPlayer = AudioPlayer();
   }
 
-  
+
 
 
   @override
@@ -62,7 +62,11 @@ class _MediaScreenState extends State<MediaScreen> {
                 ),
                 const SizedBox(height: 40),
                 Text('Matthew Hayes',
-                    style: TextStyle(color: color.AppColor.longColor, fontSize:size.AppSize.tabInnerText, fontWeight: FontWeight.w200)
+                    style: TextStyle(
+                      color: color.AppColor.longColor, 
+                      fontSize:size.AppSize.tabInnerText, 
+                      fontWeight: FontWeight.w200
+                    )
                   ),
               ],
             ),
