@@ -53,7 +53,7 @@ class _OnboardingState extends State<Onboarding> {
                   child: Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top:35, bottom:2, left:16, right:16),
+                        margin: const EdgeInsets.only(top:26, bottom:2, left:16, right:16),
                         alignment: Alignment.topLeft,
                         child: TextButton(
                           onPressed: (){
@@ -94,28 +94,51 @@ class _OnboardingState extends State<Onboarding> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget> [
                 Container(
-                  width: 196,
                   child:Text(data[i].title, 
-                    style: TextStyle(color: color.AppColor.whiteColor, fontSize:size.AppSize.tabText ),
+                    style: TextStyle(
+                      color: color.AppColor.whiteColor, 
+                      fontSize:size.AppSize.tabText 
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
                 const SizedBox(height: 25),
                 Container(
                   child:Text(data[i].desc, 
-                    style: TextStyle(color: color.AppColor.whiteColor, fontSize:size.AppSize.tabInnerText, fontWeight: FontWeight.w300 ),
+                    style: TextStyle(
+                      color: color.AppColor.longColor, 
+                      fontSize:size.AppSize.tabInnerText, 
+                      fontWeight: FontWeight.w200, 
+                      height: 1.5,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 45),
+                const SizedBox(height: 27),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(3, (indexDots){
+                    return Container(
+                      margin: const EdgeInsets.only(right:3),
+                      width: i == indexDots ? 45 : 8,
+                      height: 8,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: i == indexDots ? color.AppColor.mainColor : color.AppColor.whiteColor
+                      ),
+                    );
+                  })
+                ),
+                const SizedBox(height: 22),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextButton(
                       onPressed: (){
+
                         Navigator.pushNamedAndRemoveUntil(context, '/lead', (route) => false);
                       }, 
-                      child: Text(currentIndex == data.length - 1 ? 'Well Done' : 'Skip Tour', 
+                      child: Text(currentIndex == data.length - 1 ? ' ' : 'Skip Tour', 
                         style: TextStyle(color: color.AppColor.mainColor, fontSize:size.AppSize.tabInnerText, fontWeight: FontWeight.w300)
                       )
                     ),

@@ -24,14 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   route() {
-    Navigator.pushReplacementNamed(context, '/onboard');
-    // Navigator.pushReplacement(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (context)=>
-    //       const BottomNavigation()
-    //   )
-    // );
+    Navigator.pushReplacementNamed(context, '/lead');
   }
 
   @override

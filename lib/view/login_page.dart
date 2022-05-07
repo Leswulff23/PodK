@@ -13,6 +13,19 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height:25),
               CustomButton(
                 onPressed: (){
-                  Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+                  // Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+                  Navigator.pushReplacementNamed(context, '/');
                 }, 
                 btnName: 'Login'
               ),

@@ -13,6 +13,19 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+  
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
 return Scaffold(

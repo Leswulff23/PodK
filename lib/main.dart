@@ -12,19 +12,15 @@ import 'package:podk/components/bottom_navigation.dart';
 import 'package:podk/components/text.dart' as size;
 import 'package:podk/components/colors.dart' as color;
 
-// int? initScreen;
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   SharedPreferences prefs = await SharedPreferences.getInstance();
-//   initScreen = prefs.getInt("initScreen");
-//   await prefs.setInt("initScreen", 1);
-//   runApp(const MyApp());
-// }
+int? initScreen;
 
-Future main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  initScreen = prefs.getInt("initScreen");
+  await prefs.setInt("initScreen", 1);
   await Firebase.initializeApp();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(const MyApp());
 }
 
@@ -39,6 +35,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: 'Gilroy-Regular',
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the

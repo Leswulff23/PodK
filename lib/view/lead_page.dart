@@ -14,6 +14,18 @@ class LeadScreen extends StatefulWidget {
 
 class _LeadScreenState extends State<LeadScreen> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -22,7 +34,7 @@ class _LeadScreenState extends State<LeadScreen> {
           children: [
             Expanded(
               child: Container(
-                margin: EdgeInsets.only(top:40, bottom:2, left:16, right:16),
+                margin: const EdgeInsets.only(top:40, bottom:2, left:16, right:16),
                 alignment: Alignment.topLeft,
                 child: Image.asset('assets/icons/logo.png'),
               )

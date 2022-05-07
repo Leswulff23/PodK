@@ -10,6 +10,18 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    
+  }
+
+  @override
+  void dispose() {
+    
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Container(

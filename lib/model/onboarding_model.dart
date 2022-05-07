@@ -12,18 +12,18 @@ class OnboardingModel {
 List <OnboardingModel> data = [
   OnboardingModel(
     image: 'assets/background/screen1.png',
-    title: 'Lorem ipsum dolor sit amet',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida eget vitae arcu, elementum pulvinar sit. ',
+    title: 'Welcome to PodK',
+    desc: 'Where your listening adventure begins. We are ready to engage your minds.',
   ),
     OnboardingModel(
     image: 'assets/background/screen2.png',
-    title: 'Lorem ipsum dolor sit amet',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida eget vitae arcu, elementum pulvinar sit. ',
+    title: 'Podcast sounds great',
+    desc: 'We"ll do the work of bringing entertaining news. You just focus on Us.',
   ),
     OnboardingModel(
     image: 'assets/background/screen3.png',
-    title: 'Lorem ipsum dolor sit amet',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida eget vitae arcu, elementum pulvinar sit. ',
+    title: 'More Audio please',
+    desc: 'With our wide variety of topic areas, you will never be bored. Develop your interest here.',
   )
   
 ];

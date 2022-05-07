@@ -36,7 +36,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   shared_preferences: ^2.0.13
   audioplayers: ^0.20.1
-  # assets_audio_player: ^3.0.4+1
   cloud_firestore: ^3.1.14
 
 dev_dependencies:
@@ -80,10 +79,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Gilroy-Regular
+      fonts:
+        - asset: fonts/Gilroy-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
