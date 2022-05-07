@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:podk/view/home_page.dart';
 import 'package:podk/view/lead_page.dart';
@@ -12,6 +11,7 @@ import 'package:podk/components/bottom_navigation.dart';
 import 'package:podk/components/text.dart' as size;
 import 'package:podk/components/colors.dart' as color;
 
+
 int? initScreen;
 
 Future<void> main() async {
@@ -19,7 +19,6 @@ Future<void> main() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   initScreen = prefs.getInt("initScreen");
   await prefs.setInt("initScreen", 1);
-  await Firebase.initializeApp();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(const MyApp());
 }
@@ -49,7 +48,7 @@ class MyApp extends StatelessWidget {
         canvasColor: Colors.transparent,
         scaffoldBackgroundColor: Colors.transparent,
       ),
-      initialRoute: '/splash',
+      initialRoute: initScreen == 0 || initScreen == null ? '/onboard' : '/splash',
       routes: {
         '/': (context) => const BottomNavigation(),
         '/splash': (context) => const SplashScreen(),

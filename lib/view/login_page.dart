@@ -3,7 +3,9 @@ import 'package:podk/components/custom_botton.dart';
 import 'package:podk/components/custom_textfield.dart';
 import 'package:podk/components/text.dart' as size;
 import 'package:podk/components/colors.dart' as color;
+import 'package:podk/view/home_page.dart';
 import 'package:podk/view/lead_page.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({ Key? key }) : super(key: key);
@@ -13,6 +15,14 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  
+  final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController emailController = new TextEditingController();
+  final TextEditingController passwordController = new TextEditingController();
+
+
 
   @override
   void initState() {
@@ -26,8 +36,65 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
+  //firebase
+  // final _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
+    //email field
+    final emailField = TextFormField(
+      keyboardType: TextInputType.emailAddress, 
+      obscureText: false,
+      controller: emailController,
+      style: TextStyle(color: color.AppColor.longColor),
+      decoration: InputDecoration(
+        labelText: 'Email',
+        labelStyle: TextStyle(color: color.AppColor.longColor),
+        hintStyle: TextStyle(color: color.AppColor.longColor),
+        errorStyle: const TextStyle(color: Colors.red),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+        border: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+      ),
+      onSaved: (value){
+        emailController.text =value!;
+      },
+      textInputAction: TextInputAction.next,
+    );
+
+    //password field
+    final passwordField = TextFormField(
+      keyboardType: TextInputType.emailAddress, 
+      obscureText: true,
+      controller: passwordController,
+      style: TextStyle(color: color.AppColor.longColor),
+      decoration: InputDecoration(
+        labelText: 'Password',
+        labelStyle: TextStyle(color: color.AppColor.longColor),
+        hintStyle: TextStyle(color: color.AppColor.longColor),
+        errorStyle: const TextStyle(color: Colors.red),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+        border: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+      ),
+      onSaved: (value){
+        passwordController.text =value!;
+      },
+      textInputAction: TextInputAction.next,
+    );
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
@@ -70,26 +137,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left:25, right: 25, top:35),
-                child: CustomField(labelName: 'Name', 
-                  inputType: TextInputType.emailAddress, 
-                  obscureText: false
-                ),
-              ),
-              const SizedBox(height: 10),
-              const Padding(
-                padding: EdgeInsets.only(left:25, right: 25, top:15),
-                child: CustomField(labelName: 'Password', 
-                  inputType: TextInputType.emailAddress, 
-                  obscureText: true
-                ),
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(left:25, right: 25, top:35),
+                      child: emailField, 
+                    ),
+                    const SizedBox(height: 10),
+                    Padding(
+                      padding: EdgeInsets.only(left:25, right: 25, top:15),
+                      child: passwordField
+                    ),
+                  ]
+                )
               ),
               const SizedBox(height:25),
               CustomButton(
                 onPressed: (){
-                  // Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
-                  Navigator.pushReplacementNamed(context, '/');
+                  Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
                 }, 
                 btnName: 'Login'
               ),
@@ -100,4 +167,5 @@ class _LoginScreenState extends State<LoginScreen> {
       )
     );
   }
+
 }

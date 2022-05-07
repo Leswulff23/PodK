@@ -13,7 +13,7 @@ List <OnboardingModel> data = [
   OnboardingModel(
     image: 'assets/background/screen1.png',
     title: 'Welcome to PodK',
-    desc: 'Where your listening adventure begins. We are ready to engage your minds.',
+    desc: 'Where your listening adventure begins. We are ready to engage your mind.',
   ),
     OnboardingModel(
     image: 'assets/background/screen2.png',

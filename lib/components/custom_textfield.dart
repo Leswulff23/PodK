@@ -7,10 +7,12 @@ class CustomField extends StatelessWidget {
   final String labelName;
   final TextInputType inputType;
   final bool obscureText;
+  final TextEditingController controller;
   const CustomField({ 
     required this.labelName,
     required this.inputType,
     required this.obscureText,
+    required this.controller,
     Key? key 
     }) : super(key: key);
 
@@ -19,6 +21,7 @@ class CustomField extends StatelessWidget {
     return TextFormField(
       keyboardType: inputType,
       obscureText: obscureText,
+      controller: controller,
       style: TextStyle(color: color.AppColor.longColor),
       decoration: InputDecoration(
         labelText: labelName,

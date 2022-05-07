@@ -14,6 +14,12 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
 
+    final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController nameController = new TextEditingController();
+    final TextEditingController emailController = new TextEditingController();
+  final TextEditingController passwordController = new TextEditingController();
+
   @override
   void initState() {
     // TODO: implement initState
@@ -28,7 +34,85 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-return Scaffold(
+    final nameField = TextFormField(
+      keyboardType: TextInputType.emailAddress, 
+      obscureText: false,
+      controller: nameController,
+      style: TextStyle(color: color.AppColor.longColor),
+      decoration: InputDecoration(
+        labelText: 'Name',
+        labelStyle: TextStyle(color: color.AppColor.longColor),
+        hintStyle: TextStyle(color: color.AppColor.longColor),
+        errorStyle: const TextStyle(color: Colors.red),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+        border: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+      ),
+      onSaved: (value){
+        nameController.text =value!;
+      },
+      textInputAction: TextInputAction.next,
+    );
+
+    final emailField = TextFormField(
+      keyboardType: TextInputType.emailAddress, 
+      obscureText: false,
+      controller: emailController,
+      style: TextStyle(color: color.AppColor.longColor),
+      decoration: InputDecoration(
+        labelText: 'Email',
+        labelStyle: TextStyle(color: color.AppColor.longColor),
+        hintStyle: TextStyle(color: color.AppColor.longColor),
+        errorStyle: const TextStyle(color: Colors.red),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+        border: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+      ),
+      onSaved: (value){
+        emailController.text =value!;
+      },
+      textInputAction: TextInputAction.next,
+    );
+
+    final passwordField = TextFormField(
+      keyboardType: TextInputType.emailAddress, 
+      obscureText: true,
+      controller: passwordController,
+      style: TextStyle(color: color.AppColor.longColor),
+      decoration: InputDecoration(
+        labelText: 'Password',
+        labelStyle: TextStyle(color: color.AppColor.longColor),
+        hintStyle: TextStyle(color: color.AppColor.longColor),
+        errorStyle: const TextStyle(color: Colors.red),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+        border: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white12),
+        ),
+      ),
+      onSaved: (value){
+        passwordController.text =value!;
+      },
+      textInputAction: TextInputAction.next,
+    );
+
+    return Scaffold(
       extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
         reverse: true,
@@ -74,28 +158,26 @@ return Scaffold(
                   textAlign: TextAlign.center,
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(left:25, right: 25, top:35),
-                child: CustomField(labelName: 'Name', 
-                  inputType: TextInputType.emailAddress, 
-                  obscureText: false
-                ),
-              ),
-              const SizedBox(height: 10),
-              const Padding(
-                padding:  EdgeInsets.only(left:25, right: 25, top:15),
-                child: CustomField(labelName: 'Email', 
-                  inputType: TextInputType.emailAddress, 
-                  obscureText: false
-                ),
-              ),
-              const SizedBox(height: 10),
-              const Padding(
-                padding:  EdgeInsets.only(left:25, right: 25, top:15),
-                child: CustomField(labelName: 'Password', 
-                  inputType: TextInputType.emailAddress, 
-                  obscureText: true
-                ),
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left:25, right: 25, top:35),
+                      child: nameField
+                    ),
+                    const SizedBox(height: 10),
+                    Padding(
+                      padding:  EdgeInsets.only(left:25, right: 25, top:15),
+                      child: emailField
+                    ),
+                    const SizedBox(height: 10),
+                    Padding(
+                      padding:  EdgeInsets.only(left:25, right: 25, top:15),
+                      child: passwordField
+                    ),
+                  ],
+                )
               ),
               const SizedBox(height:25),
               CustomButton(

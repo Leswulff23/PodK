@@ -57,7 +57,7 @@ class _AudioFileState extends State<AudioFile> {
   Widget btnStart() {
     return IconButton(
       padding: const EdgeInsets.only(bottom: 10),
-      icon:isPlaying==false?Icon(_icons[0], size:50, color:Colors.blue):Icon(_icons[1], size:50, color:Colors.blue),
+      icon:isPlaying==false?Icon(_icons[0], size:50, color:Color(0xFF9C6DDB)):Icon(_icons[1], size:50, color:Color(0xFF9C6DDB)),
       onPressed: (){
         if(isPlaying==false) {
           this.widget.advancedPlayer.play(path);
@@ -80,7 +80,7 @@ class _AudioFileState extends State<AudioFile> {
         icon: const Icon(
           Icons.fast_forward,
           size: 30,
-          color: Colors.black,
+          color: Color(0xFFFDFDFD),
         ),
         onPressed: () {
           setState(() {
@@ -95,7 +95,7 @@ class _AudioFileState extends State<AudioFile> {
       icon: const Icon(
         Icons.fast_rewind,
         size: 30,
-        color: Colors.black,
+        color: Color(0xFFFDFDFD)
       ),
       onPressed: () {
         this.widget.advancedPlayer.setPlaybackRate( 0.5);
@@ -127,11 +127,11 @@ class _AudioFileState extends State<AudioFile> {
           this.widget.advancedPlayer.setReleaseMode(ReleaseMode.LOOP);
           setState(() {
             isRepeat=true;
-            color=Colors.blue;
+            color=Color(0xFF9C6DDB);
           });
         }else if(isRepeat==true){
           this.widget.advancedPlayer.setReleaseMode(ReleaseMode.RELEASE);
-          color=Colors.black;
+          color=Color(0xFFFDFDFD);
           isRepeat=false;
         }
       },
