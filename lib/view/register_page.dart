@@ -69,7 +69,7 @@ return Scaffold(
                 padding:  EdgeInsets.only(left:25, right: 25, top:15),
                 child: CustomField(labelName: 'Password', 
                   inputType: TextInputType.emailAddress, 
-                  obscureText: false
+                  obscureText: true
                 ),
               ),
               const SizedBox(height:25),
