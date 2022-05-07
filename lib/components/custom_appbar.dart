@@ -27,14 +27,14 @@ class _CustomAppBarState extends State<CustomAppBar> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, left:10),
+                  padding: const EdgeInsets.only(top: 5, left:5),
                   child: Image.asset(
                     'assets/icons/logo.png',
                     fit: BoxFit.cover,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, right:10),
+                  padding: const EdgeInsets.only(top: 5, right:5),
                   child: CircleAvatar(
                     backgroundColor: color.AppColor.mainColor,
                     child: const Icon(Icons.person),
@@ -47,12 +47,11 @@ class _CustomAppBarState extends State<CustomAppBar> {
               padding: const EdgeInsets.only(left: 10, right: 10),
               child: Container(
                 alignment: Alignment.topLeft,
-                child: Text('Hey Jake',
+                child: Text('Hey Jake,',
                   style: TextStyle(color: color.AppColor.mainColor, fontSize:size.AppSize.tabText, fontWeight: FontWeight.w600)
                 ),
               ),
             ),
-            
             const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(left: 10, right: 10),
@@ -71,14 +70,14 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   decoration: InputDecoration(
                     hintStyle: TextStyle(color: color.AppColor.longColor),
                     errorStyle: const TextStyle(color: Colors.red),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white12),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: color.AppColor.blackColor),
                     ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white12),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: color.AppColor.blackColor),
                     ),
-                    border: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white12),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: color.AppColor.blackColor),
                     ),
                     contentPadding: const EdgeInsets.all(10),
                     hintText: 'Search for podcasts, topics',

@@ -3,6 +3,7 @@ import 'package:podk/components/custom_botton.dart';
 import 'package:podk/components/custom_textfield.dart';
 import 'package:podk/components/text.dart' as size;
 import 'package:podk/components/colors.dart' as color;
+import 'package:podk/view/lead_page.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({ Key? key }) : super(key: key);
@@ -27,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 alignment: Alignment.topLeft,
                 child: TextButton(
                   onPressed: (){
-                    Navigator.pushNamed(context, '/lead');
+                    Navigator.pop(context);   
                   },
                   child: Text('<Back',
                     style: TextStyle(color: color.AppColor.mainColor, fontSize:size.AppSize.tabInnerText, fontWeight: FontWeight.w300),
